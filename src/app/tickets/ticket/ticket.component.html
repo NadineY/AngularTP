@@ -3,5 +3,7 @@
   <h3>My title: {{ticket.title}}</h3>
   <i class="fas fa-calendar-alt"></i> {{ticket.date | date: 'shortTime'}} &nbsp;&nbsp;
   <i class="far fa-user"></i> {{ticket.student}}
-  <i class="fab fa-aws"></i> {{ticket.major}}
+  <i *ngIf="ticket.major === 'SI'" class="fas fa-calendar-alt"></i>
+  <i *ngIf="ticket.major === 'GE'" class="fas fa-calendar-alt"></i>  {{ticket.major}}
+  <button type="submit" (click)="deleteTicket(ticket)">Delete</button>
 </div>
